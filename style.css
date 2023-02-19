@@ -23,18 +23,73 @@ body {
   align-items: center;
   margin: 0 auto;
   padding: 2em;
-  height: 200px;
-  width: 500px;
+  height: 300px;
+  width: 600px;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.8em;
   line-height: 1.1;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   line-height: 1.2;
+}
+
+/* animation for i, wobble  */
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#copy-btn {
+  background-color: #333337;
+  color: #ffffff;
+  border: none;
+  margin-top: 30px;
+  border-radius: 0.4em;
+  padding: 0.6em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+/* add animation to copy-btn */
+#copy-btn:hover {
+  background-color: #4d4e57;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: ease-in-out 0.2s;
+}
+
+/* when hover on copy-btn, i animation happens */
+#copy-btn:hover i {
+  animation: wobble 0.4s ease-in-out 2;
+}
+
+/* add animation to copy-btn */
+#copy-btn:active {
+  background-color: #333337;
+}
+
+/* add animation to copy-btn */
+#copy-btn:focus {
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {

@@ -28,4 +28,16 @@ async function translateQuote(quote, author) {
     });
 }
 
+const copyBtn = document.getElementById("copy-btn");
+
+copyBtn.addEventListener("click", () => {
+  const quote = document.getElementById("quote").innerText;
+  const author = document.getElementById("author").innerText;
+  const text = `${quote} ${author}`;
+
+  navigator.clipboard.writeText(text);
+
+  copyBtn.innerHTML = `<i id="check-icon" class="fas fa-check"></i> ¡Copiada al portapapeles!`;
+});
+
 getQuote();
