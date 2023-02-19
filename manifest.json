@@ -1,9 +1,15 @@
 {
-  "name": "Frase Célebre Aleatoria",
+  "name": "Frase Célebre",
   "version": "1.0.0",
-  "description": "Extensión de Chrome que muestra una frase aleatoria cada vez que se abre una nueva pestaña.",
+  "description": "Inspírate y mejora tu día con una frase célebre. Esta extensión te permite ver una frase célebre aleatoria cada vez que la abras.",
   "manifest_version": 3,
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["activeTab", "http://*/", "https://*/"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["index.js"]
+    }
+  ],
   "icons": {
     "16": "logo.png",
     "32": "logo.png",
@@ -11,7 +17,7 @@
     "128": "logo.png"
   },
   "action": {
-    "default_title": "Frase Célebre Aleatoria",
+    "default_title": "Frase Célebre",
     "default_popup": "index.html"
   }
 }
